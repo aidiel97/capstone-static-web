@@ -2,187 +2,198 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>CAPSTONE 2026</title>
+    <title>CAPSTONE 2026 - DTETI UGM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        /* ===== Mobile-first ===== */
+        /* Menggunakan font yang lebih modern jika tersedia */
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #000;
-            color: #fff;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            /* Gradient background lembut seperti di gambar */
+            background: linear-gradient(135deg, #e0e5ec 0%, #fdfbfb 100%);
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 40px;
         }
 
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            background: url("assets/header.jpg") center / cover no-repeat;
+        .container {
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 30px 20px;
+            border-radius: 40px;
+            /* Efek glassmorphism tipis */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Profile Section */
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 0 auto 15px;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-            flex: 1;
-            padding-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
-        .overlay {
-            background: rgba(0, 0, 0, 0.55);
-            padding: 20px 24px;
-            border-radius: 12px;
-            text-align: center;
-            max-width: 420px;
-            width: 100%;
+        .profile-img img {
+            width: 80%;
+            object-fit: contain;
         }
 
-        h1 {
-            margin: 0 0 6px 0;
-            font-size: 2em;
-            letter-spacing: 1px;
+        .username {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #000;
         }
 
-        h4 {
-            margin: 0 0 0 0;
+        .description {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.4;
         }
 
-        h5 {
-            margin: 0 0 6px 0;
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        .subtitle {
-            font-size: 0.9em;
-            color: #F5AD1A;
-            cursor: pointer;
-            margin-bottom: 12px;
+        .social-icons a {
+            color: #000;
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: transform 0.2s;
         }
 
-        .subtitle:hover {
-            text-decoration: underline;
+        .social-icons a:hover {
+            transform: scale(1.1);
         }
 
-        ul.menu {
+        /* Buttons / Menu */
+        .menu-list {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: none;
         }
 
-        ul.menu li {
-            margin: 8px 0;
-        }
-
-        ul.menu a {
-            display: block;
-            padding: 10px;
-            border-radius: 8px;
-            background: rgba(0, 0, 0, 0.3);
-            color: #FFF;
+        .menu-item {
+            background: #fff;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
             text-decoration: none;
-            font-size: 0.95em;
+            color: #000;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
-        ul.menu a:hover {
-            background: rgba(0, 0, 0, 0.9);
-            color: #F5AD1A;
+        .menu-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: #fcfcfc;
         }
 
-        .footer {
-            padding: 20px 0 30px;
+        .menu-item span {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .dots {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 25px 0 15px;
+            letter-spacing: 1px;
+            color: #444;
+        }
+
+        /* Footer */
+        .footer-logos {
+            margin-top: 40px;
             display: flex;
             justify-content: center;
-            align-items: center;
             gap: 20px;
+            opacity: 0.8;
         }
 
-        .footer img {
-            height: 40px;
-            max-width: 120px;
-            object-fit: contain;
-            opacity: 0.9;
+        .footer-logos img {
+            height: 35px;
+            filter: grayscale(20%);
         }
 
-        .logo-circle {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            overflow: hidden;        /* kunci crop */
-            background: #fff;        /* aman jika logo transparan */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;       /* inilah yang memaksa crop */
-        }
-
-        /* ===== Desktop enhancement ===== */
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 2.6em;
-            }
-
-            .overlay {
-                max-width: 520px;
-            }
-
-            .footer img {
-                height: 50px;
-                max-width: 160px;
-            }
-
-            .logo-circle {
-                width: 72px;
-                height: 72px;
-            }
-        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<section class="hero">
-    <div class="overlay">
-        <h1>CAPSTONE 1-2026</h1>
-        
-        <div class="subtitle" onclick="toggleMenu()">klik untuk melihat/menutup menu</div>
-        <ul class="menu" id="menu">
-            <!-- Menu (silakan edit / tambah di sini) -->
-            <li><a href="https://drive.google.com/file/d/12Ch5ZN0kFOkMuy3WbP2i7vumZ4gV-uN1/view?usp=sharing" target="_blank">Bahan Presentasi Sosialisasi Capstone 2026</a></li>
-            <li><a href="https://forms.gle/PgTue1ouLZeAfg5c8" target="_blank">Pendaftaran</a></li>
-            <li><a href="https://drive.google.com/drive/folders/1xY1c0y2rG1u6QDU0R_p6b60MBqDzWoE5?usp=sharing" target="_blank">Template Dokumen C251</a></li>
-            <li><a href="https://drive.google.com/drive/folders/18dTi6nUbq1yJaScACjS3YEOupXKHU-_n?usp=sharing" target="_blank">Template Surat Pernyataan</a></li>
-        </ul>
-    
-        <h4>Departemen Teknik Elektro dan Teknologi Informasi <b>(DTETI)</b></h4>
-        <h5>Fakultas Teknik, Universitas Gadjah Mada</h5>
+<div class="container">
+    <div class="profile-img">
+        <img src="assets/dteti.jpg" alt="DTETI Logo">
     </div>
     
-    <footer class="footer">
-        <div class="logo-circle">
-            <img src="assets/dteti.jpg" alt="Logo 1">
-        </div>
-        <div class="logo-circle">
-            <img src="assets/ugm.jpg" alt="Logo 2">
-        </div>
-    </footer>
-</section>
+    <div class="username">Capstone 1 2026</div>
+    <div class="description">
+        Departemen Teknik Elektro dan Teknologi Informasi<br>
+        <strong>Fakultas Teknik, Universitas Gadjah Mada</strong>
+    </div>
 
+    <div class="menu-list">
+        <a href="https://drive.google.com/file/d/12Ch5ZN0kFOkMuy3WbP2i7vumZ4gV-uN1/view?usp=sharing" class="menu-item" target="_blank">
+            <span>Bahan Sosialisasi Capstone 2026</span>
+        </a>
+        
+        <a href="https://forms.gle/PgTue1ouLZeAfg5c8" class="menu-item" target="_blank">
+            <span>Pendaftaran</span>
+        </a>
 
-<script>
-    function toggleMenu() {
-        const menu = document.getElementById("menu");
-        menu.style.display = (menu.style.display === "none" || menu.style.display === "")
-            ? "block"
-            : "none";
-    }
-</script>
+        <div class="section-title">Dokumen & Template</div>
+
+        <a href="https://drive.google.com/drive/folders/1xY1c0y2rG1u6QDU0R_p6b60MBqDzWoE5?usp=sharing" class="menu-item" target="_blank">
+            <span>Template Dokumen C251</span>
+        </a>
+        
+        <a href="https://drive.google.com/drive/folders/18dTi6nUbq1yJaScACjS3YEOupXKHU-_n?usp=sharing" class="menu-item" target="_blank">
+            <span>Template Surat Pernyataan</span>
+        </a>
+
+        <div class="section-title">Frequently Ask Question</div>
+
+        <a href="#" class="menu-item" target="_blank">
+            <span>FAQ</span>
+        </a>
+        <a href="#" class="menu-item" target="_blank">
+            <span>Ask Us</span>
+        </a>
+    </div>
+
+    <div class="footer-logos">
+        <img src="assets/ugm.jpg" alt="UGM Logo">
+    </div>
+</div>
 
 </body>
 </html>
