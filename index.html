@@ -189,7 +189,7 @@
     <!-- DYNAMIC AGENDA CARD -->
     <div class="agenda-card" id="agendaCard" style="display: none;">
         <div class="agenda-header">
-            <span>Agenda Terdekat / Berjalan</span>
+            <span>Agenda Terdekat</span>
         </div>
         <div class="agenda-title" id="agendaTitle">Memuat agenda...</div>
         <div class="agenda-time" id="agendaTime"><i class="far fa-calendar-alt"></i> -</div>
@@ -264,12 +264,12 @@
         { id: 5, k: "Kuliah Perdana Capstone 1", t: "30 - 31 Maret 2026", start: "2026-03-30", end: "2026-03-31" },
         { id: 6, k: "Ujian Tengah Semester (UTS) Capstone 1", t: "22 - 26 April 2026", start: "2026-04-22", end: "2026-04-26" },
         { id: 7, k: "Kuliah, Bimbingan dan Pendampingan Capstone 1", t: "20 April - 29 Mei 2026", start: "2026-04-20", end: "2026-05-29" },
-        { id: 8, k: "Deadline pengumpulan naskah C251 (Persetujuan UAS)", t: "29 Mei 2026", start: "2026-05-29", end: "2026-05-29" },
+        { id: 8, k: "Deadline pengumpulan naskah C251 \n(Persetujuan UAS)", t: "29 Mei 2026", start: "2026-05-29", end: "2026-05-29" },
         { id: 9, k: "Review naskah C251 dan Penjadwalan UAS", t: "1 - 7 Juni 2026", start: "2026-06-01", end: "2026-06-07" },
-        { id: 10, k: "UAS Capstone 1 (Pendadaran Proposal & Demo Prototype)", t: "8 - 18 Juni 2026", start: "2026-06-08", end: "2026-06-18" },
+        { id: 10, k: "UAS Capstone 1\n(Pendadaran Proposal & Demo Prototype)", t: "8 - 18 Juni 2026", start: "2026-06-08", end: "2026-06-18" },
         { id: 11, k: "Ujian ulang C251 (bagi yang tidak lulus)", t: "10 - 11 Agustus 2026", start: "2026-08-10", end: "2026-08-11" },
-        { id: 12, k: "Deadline pengumpulan naskah C251 pasca-revisi/ujian ulang", t: "14 Agustus 2026", start: "2026-08-14", end: "2026-08-14" },
-        { id: 13, k: "Finalisasi penilaian Capstone I oleh Pengelola DTETI", t: "15 - 31 Agustus 2026", start: "2026-08-15", end: "2026-08-31" },
+        { id: 12, k: "Deadline pengumpulan naskah C251\npasca-revisi/ujian ulang", t: "14 Agustus 2026", start: "2026-08-14", end: "2026-08-14" },
+        { id: 13, k: "Finalisasi penilaian Capstone I\noleh Pengelola DTETI", t: "15 - 31 Agustus 2026", start: "2026-08-15", end: "2026-08-31" },
         { id: 14, k: "Unggah nilai Capstone 1 ke Simaster", t: "1 September 2026", start: "2026-09-01", end: "2026-09-01" }
     ];
 
@@ -283,12 +283,11 @@
 
         let activeAgenda = null;
 
-        // 1. Cari agenda yang sedang berjalan hari ini atau rentang waktu terdekat di masa depan
         for (let item of timeline) {
             const startDate = new Date(item.start);
             const endDate = new Date(item.end);
 
-            if (today <= endDate) {
+            if (today < startDate) {
                 activeAgenda = item;
                 break;
             }
