@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>CAPSTONE 2026 - DTETI UGM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #e0e5ec 0%, #fdfbfb 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 30px 20px;
+            border-radius: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        /* Profile Section */
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 80%;
+            object-fit: contain;
+        }
+
+        .username {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        /* Dynamic Agenda Card Style */
+        .agenda-card {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            text-align: left;
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .agenda-header {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            opacity: 0.9;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .agenda-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .agenda-time {
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        /* Buttons / Menu */
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item {
+            background: #fff;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: #fcfcfc;
+        }
+
+        .menu-item span {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .dots {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 25px 0 15px;
+            letter-spacing: 1px;
+            color: #444;
+        }
+
+        /* Footer */
+        .footer-logos {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0.8;
+        }
+
+        .logo-circle-footer {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo-circle-footer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="profile-img">
+        <img src="assets/dteti.jpg" alt="DTETI Logo">
+    </div>
+    
+    <div class="username">Capstone 1 2026</div>
+    <div class="description">
+        Departemen Teknik Elektro dan Teknologi Informasi<br>
+        <strong>Fakultas Teknik, Universitas Gadjah Mada</strong>
+    </div>
+
+    <div class="menu-list">
+        <a href="https://drive.google.com/file/d/1a_pTtVTbDEa8hL5AiBxARYZb1ZKZ3vZb/view?usp=sharing" class="menu-item" target="_blank">
+            <span>Informasi Pelaksanaan Ujian Capstone 1</span>
+        </a>
+
+        <a href="http://ugm.id/PendaftaranUjianCapstone1" class="menu-item" target="_blank">
+            <span>Pendaftaran Ujian Capstone 1</span>
+        </a>
+
+        <a href="http://ugm.id/DokumenFinalC251" class="menu-item" target="_blank">
+            <span>Unggah Dokumen C251</span>
+        </a>
+
+        <div class="section-title">Informasi Umum Capstone 1</div>
+
+        <a href="https://drive.google.com/file/d/1j-NTgG05vb7bCdRb0JUepj6T6R7BeINF/view?usp=sharing" class="menu-item" target="_blank">
+            <span>Materi Sosialisasi</span>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1o84i_CL-yMzfkT6KP5mvDtrtNZSzac3b/view?usp=sharing" class="menu-item" target="_blank">
+            <span>Materi Kuliah Perdana</span>
+        </a>
+        
+        <!-- <a href="https://forms.gle/PgTue1ouLZeAfg5c8" title="23 Februari - 6 Maret 2026" class="menu-item" target="_blank">
+            <span>Pendaftaran</span>
+        </a> -->
+        
+        <a href="https://drive.google.com/file/d/1obWIhJ8RoWRElRvX9QqVJ6cfaRIl2njT/view?usp=sharing" class="menu-item" target="_blank">
+            <span>Susunan Kelompok dan Jadwal Kelas</span>
+        </a>
+
+        <div class="section-title">Dokumen & Template</div>
+
+        <a href="https://drive.google.com/drive/folders/1xY1c0y2rG1u6QDU0R_p6b60MBqDzWoE5?usp=sharing" class="menu-item" target="_blank">
+            <span>Template Dokumen C251</span>
+        </a>
+        
+        <a href="https://drive.google.com/drive/folders/18dTi6nUbq1yJaScACjS3YEOupXKHU-_n?usp=sharing" class="menu-item" target="_blank">
+            <span>Template Surat Pernyataan</span>
+        </a>
+
+        <div class="section-title">Frequently Ask Question</div>
+
+        <a href="https://docs.google.com/document/d/1NE7fbH1DL_CS9Rg2QWw0JtF8ngfmtf3RXRMEAVDecUY/edit?usp=sharing" class="menu-item" target="_blank">
+            <span>FAQ</span>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=capstone-dteti.ft@ugm.ac.id&su=Tanya%20Capstone%202026" class="menu-item" target="_blank">
+            <span>Ask Us: capstone-dteti.ft@ugm.ac.id</span>
+            <div class="dots">✉️</div>
+        </a>
+        
+        <div class="section-title">Kembali ke Menu Utama</div>
+        <a href="index.html" class="menu-item">
+            <div class="dots">🔙</div>
+            <span>Informasi Capstone 2</span>
+        </a>
+    </div>
+
+    <div class="footer-logos">
+        <div class="logo-circle-footer">
+            <img src="assets/ugm.jpg" alt="UGM Logo">
+        </div>
+    </div>
+</div>
+</body>
+</html>

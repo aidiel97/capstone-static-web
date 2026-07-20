@@ -26,7 +26,7 @@
             padding: 30px 20px;
             border-radius: 40px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(245, 173, 26,0.05);
             margin-bottom: 40px;
         }
 
@@ -40,7 +40,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(245, 173, 26,0.1);
             overflow: hidden;
         }
 
@@ -65,13 +65,15 @@
 
         /* Dynamic Agenda Card Style */
         .agenda-card {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
+            /* Mengubah gradient menjadi dominan #F5AD1A */
+            background: linear-gradient(135deg, #B88213, #F5AD1A);
             color: #fff;
             padding: 15px 20px;
             border-radius: 16px;
             margin-bottom: 25px;
             text-align: left;
-            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+            /* Mengubah shadow agar senada dengan warna dasar baru */
+            box-shadow: 0 6px 15px rgba(245, 173, 26, 0.3);
         }
 
         .agenda-header {
@@ -116,12 +118,12 @@
             text-decoration: none;
             color: #000;
             font-weight: 500;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 8px rgba(245, 173, 26,0.04);
         }
 
         .menu-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(245, 173, 26,0.08);
             background: #fcfcfc;
         }
 
@@ -162,7 +164,7 @@
             justify-content: center;
             align-items: center;
             background: #fff;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 6px rgba(245, 173, 26,0.1);
         }
 
         .logo-circle-footer img {
@@ -180,7 +182,7 @@
         <img src="assets/dteti.jpg" alt="DTETI Logo">
     </div>
     
-    <div class="username">Capstone 1 2026</div>
+    <div class="username">Capstone 2 2026</div>
     <div class="description">
         Departemen Teknik Elektro dan Teknologi Informasi<br>
         <strong>Fakultas Teknik, Universitas Gadjah Mada</strong>
@@ -197,44 +199,12 @@
     
     <div class="menu-list">
         <a href="https://drive.google.com/file/d/1a_pTtVTbDEa8hL5AiBxARYZb1ZKZ3vZb/view?usp=sharing" class="menu-item" target="_blank">
-            <span>Informasi Pelaksanaan Ujian Capstone 1</span>
+            <span>Informasi Pelaksanaan Ujian Capstone 2</span>
         </a>
 
-        <a href="http://ugm.id/PendaftaranUjianCapstone1" class="menu-item" target="_blank">
-            <span>Pendaftaran Ujian Capstone 1</span>
-        </a>
-
-        <a href="http://ugm.id/DokumenFinalC251" class="menu-item" target="_blank">
-            <span>Unggah Dokumen C251</span>
-        </a>
-
-        <div class="section-title">Informasi Umum Capstone 1</div>
-
-        <a href="https://drive.google.com/file/d/1j-NTgG05vb7bCdRb0JUepj6T6R7BeINF/view?usp=sharing" class="menu-item" target="_blank">
-            <span>Materi Sosialisasi</span>
-        </a>
-
-        <a href="https://drive.google.com/file/d/1o84i_CL-yMzfkT6KP5mvDtrtNZSzac3b/view?usp=sharing" class="menu-item" target="_blank">
-            <span>Materi Kuliah Perdana</span>
-        </a>
-        
-        <!-- <a href="https://forms.gle/PgTue1ouLZeAfg5c8" title="23 Februari - 6 Maret 2026" class="menu-item" target="_blank">
-            <span>Pendaftaran</span>
-        </a> -->
-        
-        <a href="https://drive.google.com/file/d/1obWIhJ8RoWRElRvX9QqVJ6cfaRIl2njT/view?usp=sharing" class="menu-item" target="_blank">
-            <span>Susunan Kelompok dan Jadwal Kelas</span>
-        </a>
+        <div class="section-title">Informasi Umum Capstone 2</div>
 
         <div class="section-title">Dokumen & Template</div>
-
-        <a href="https://drive.google.com/drive/folders/1xY1c0y2rG1u6QDU0R_p6b60MBqDzWoE5?usp=sharing" class="menu-item" target="_blank">
-            <span>Template Dokumen C251</span>
-        </a>
-        
-        <a href="https://drive.google.com/drive/folders/18dTi6nUbq1yJaScACjS3YEOupXKHU-_n?usp=sharing" class="menu-item" target="_blank">
-            <span>Template Surat Pernyataan</span>
-        </a>
 
         <div class="section-title">Frequently Ask Question</div>
 
@@ -244,6 +214,12 @@
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=capstone-dteti.ft@ugm.ac.id&su=Tanya%20Capstone%202026" class="menu-item" target="_blank">
             <span>Ask Us: capstone-dteti.ft@ugm.ac.id</span>
             <div class="dots">✉️</div>
+        </a>
+
+        <div class="section-title">Lihat Kembali</div>
+        <a href="capstone1.html" class="menu-item">
+            <div class="dots">🔙</div>
+            <span>Informasi Capstone 1</span>
         </a>
     </div>
 
@@ -257,20 +233,28 @@
 <!-- TIMELINE LOGIC SCRIPT -->
 <script>
     const timeline = [
-        { id: 1, k: "Sosialisasi Capstone 2026 ke mahasiswa", t: "20 Februari 2026", start: "2026-02-20", end: "2026-02-20" },
-        { id: 2, k: "Pendaftaran Capstone 2026", t: "23 Februari - 6 Maret 2026", start: "2026-02-23", end: "2026-03-06" },
-        { id: 3, k: "Review peserta oleh Pengelola Capstone DTETI", t: "9 - 16 Maret 2026", start: "2026-03-09", end: "2026-03-16" },
-        { id: 4, k: "Pengumuman pembagian kelas dan kelompok capstone", t: "17 Maret 2026", start: "2026-03-17", end: "2026-03-17" },
-        { id: 5, k: "Kuliah Perdana Capstone 1", t: "30 - 31 Maret 2026", start: "2026-03-30", end: "2026-03-31" },
-        { id: 6, k: "Ujian Tengah Semester (UTS) Capstone 1", t: "22 - 26 April 2026", start: "2026-04-22", end: "2026-04-26" },
-        { id: 7, k: "Kuliah, Bimbingan dan Pendampingan Capstone 1", t: "20 April - 2 Juni 2026", start: "2026-04-20", end: "2026-06-02" },
-        { id: 8, k: "Deadline pengumpulan naskah C251 \n(Persetujuan UAS)", t: "2 Juni 2026", start: "2026-05-29", end: "2026-06-02" },
-        { id: 9, k: "Review naskah C251 dan Penjadwalan UAS", t: "3 - 7 Juni 2026", start: "2026-06-03", end: "2026-06-07" },
-        { id: 10, k: "UAS Capstone 1\n(Pendadaran Proposal & Demo Prototype)", t: "8 - 18 Juni 2026", start: "2026-06-08", end: "2026-06-18" },
-        { id: 11, k: "Ujian ulang C251 (bagi yang tidak lulus)", t: "10 - 11 Agustus 2026", start: "2026-08-10", end: "2026-08-11" },
-        { id: 12, k: "Deadline pengumpulan naskah C251\npasca-revisi/ujian ulang", t: "14 Agustus 2026", start: "2026-08-14", end: "2026-08-14" },
-        { id: 13, k: "Finalisasi penilaian Capstone I\noleh Pengelola DTETI", t: "15 - 31 Agustus 2026", start: "2026-08-15", end: "2026-08-31" },
-        { id: 14, k: "Unggah nilai Capstone 1 ke Simaster", t: "1 September 2026", start: "2026-09-01", end: "2026-09-01" }
+        { id: 1,    k: "Sosialisasi Capstone 2026 ke mahasiswa", t: "20 Februari 2026", start: "2026-02-20", end: "2026-02-20" },
+        { id: 2,    k: "Pendaftaran Capstone 2026", t: "23 Februari - 6 Maret 2026", start: "2026-02-23", end: "2026-03-06" },
+        { id: 3,    k: "Review peserta oleh Pengelola Capstone DTETI", t: "9 - 16 Maret 2026", start: "2026-03-09", end: "2026-03-16" },
+        { id: 4,    k: "Pengumuman pembagian kelas dan kelompok capstone", t: "17 Maret 2026", start: "2026-03-17", end: "2026-03-17" },
+        { id: 5,    k: "Kuliah Perdana Capstone 1", t: "30 - 31 Maret 2026", start: "2026-03-30", end: "2026-03-31" },
+        { id: 6,    k: "Ujian Tengah Semester (UTS) Capstone 1", t: "22 - 26 April 2026", start: "2026-04-22", end: "2026-04-26" },
+        { id: 7,    k: "Kuliah, Bimbingan dan Pendampingan Capstone 1", t: "20 April - 2 Juni 2026", start: "2026-04-20", end: "2026-06-02" },
+        { id: 8,    k: "Deadline pengumpulan naskah C251 \n(Persetujuan UAS)", t: "2 Juni 2026", start: "2026-05-29", end: "2026-06-02" },
+        { id: 9,    k: "Review naskah C251 dan Penjadwalan UAS", t: "3 - 7 Juni 2026", start: "2026-06-03", end: "2026-06-07" },
+        { id: 10,   k: "UAS Capstone 1\n(Pendadaran Proposal & Demo Prototype)", t: "8 - 18 Juni 2026", start: "2026-06-08", end: "2026-06-18" },
+        { id: 11,   k: "Ujian ulang C251 (bagi yang tidak lulus)", t: "10 - 11 Agustus 2026", start: "2026-08-10", end: "2026-08-11" },
+        { id: 12,   k: "Deadline pengumpulan naskah C251\npasca-revisi/ujian ulang", t: "14 Agustus 2026", start: "2026-08-14", end: "2026-08-14" },
+        { id: 13,   k: "Finalisasi penilaian Capstone I\noleh Pengelola DTETI", t: "15 - 31 Agustus 2026", start: "2026-08-15", end: "2026-08-31" },
+        { id: 14,   k: "Unggah nilai Capstone 1 ke Simaster", t: "1 September 2026", start: "2026-09-01", end: "2026-09-01" },
+        { id: 15,   k: "Diskusi, Bimbingan dan Pendampingan Capstone oleh Dosen Pembimbing", t: "18 Agustus - 5 November 2026", start: "2026-08-18", end: "2026-11-05" },
+        { id: 16,   k: "Ujian Tengah Semester (UTS) Capstone 2", t: "5 - 16 Oktober 2026", start: "2026-10-05", end: "2026-10-16" },
+        { id: 17,   k: "Capstone Expo", t: "6 - 7 November 2026", start: "2026-11-06", end: "2026-11-07" },
+        { id: 18,   k: "Pengumpulan Dokumen C501 (Kelompok)", t: "20 November 2026", start: "2026-11-20", end: "2026-11-20" },
+        { id: 19,   k: "Pengumpulan Dokumen C601 (Individu)", t: "4 Desember 2026", start: "2026-12-04", end: "2026-12-04" },
+        { id: 20,   k: "Ujian Akhir Semester (UAS) Capstone 2", t: "7 - 18 Desember 2026", start: "2026-12-07", end: "2026-12-18" },
+        { id: 21,   k: "Pendaftaran HKI (Hak Kekayaan Intelektual)", t: "30 Desember 2026", start: "2026-12-30", end: "2026-12-30" },
+        { id: 22,   k: "Pengumpulan Nilai Akhir Capstone 2 ke Bagian Akademik", t: "15 Januari 2027", start: "2027-01-15", end: "2027-01-15" }
     ];
 
     function updateAgenda() {
