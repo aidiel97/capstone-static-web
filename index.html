@@ -10,7 +10,8 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #ece6e0 0%, #fdfbfb 100%);
+            /* Mengubah background utama menjadi dark gradient */
+            background: linear-gradient(135deg, #121212 0%, #1e1e24 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -22,11 +23,15 @@
             width: 90%;
             max-width: 450px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.4);
+            /* Mengubah background kontainer menjadi semi-transparan gelap (Glassmorphism) */
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px 20px;
             border-radius: 40px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(245, 173, 26,0.05);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            /* Menyesuaikan shadow agar tidak terlalu terang */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             margin-bottom: 40px;
         }
 
@@ -34,13 +39,15 @@
         .profile-img {
             width: 90px;
             height: 90px;
+            /* Mengubah background lingkaran foto agar menyatu dengan dark mode */
             background: #fff;
             border-radius: 50%;
             margin: 0 auto 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(245, 173, 26,0.1);
+            border: 2px solid rgba(245, 173, 26, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             overflow: hidden;
         }
 
@@ -53,27 +60,27 @@
             font-weight: 700;
             font-size: 1.2rem;
             margin-bottom: 5px;
-            color: #000;
+            /* Mengubah warna teks nama menjadi putih */
+            color: #ffffff;
         }
 
         .description {
             font-size: 0.95rem;
-            color: #333;
+            /* Mengubah warna teks deskripsi menjadi abu-abu terang */
+            color: #b3b3b3;
             margin-bottom: 20px;
             line-height: 1.4;
         }
 
         /* Dynamic Agenda Card Style */
         .agenda-card {
-            /* Mengubah gradient menjadi dominan #F5AD1A */
             background: linear-gradient(135deg, #B88213, #F5AD1A);
             color: #fff;
             padding: 15px 20px;
             border-radius: 16px;
             margin-bottom: 25px;
             text-align: left;
-            /* Mengubah shadow agar senada dengan warna dasar baru */
-            box-shadow: 0 6px 15px rgba(245, 173, 26, 0.3);
+            box-shadow: 0 6px 20px rgba(245, 173, 26, 0.25);
         }
 
         .agenda-header {
@@ -107,24 +114,28 @@
         }
 
         .menu-item {
-            background: #fff;
+            /* Mengubah tombol menjadi gelap transparan */
+            background: rgba(255, 255, 255, 0.07);
             margin-bottom: 12px;
             border-radius: 12px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 16px 20px;
             text-decoration: none;
-            color: #000;
+            /* Mengubah warna teks menu menjadi putih */
+            color: #ffffff;
             font-weight: 500;
-            box-shadow: 0 2px 8px rgba(245, 173, 26,0.04);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .menu-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(245, 173, 26,0.08);
-            background: #fcfcfc;
+            /* Hover effect dengan sentuhan glow tipis warna emas */
+            box-shadow: 0 4px 15px rgba(245, 173, 26, 0.15);
+            background: rgba(255, 255, 255, 0.12);
         }
 
         .menu-item span {
@@ -133,7 +144,8 @@
         }
 
         .dots {
-            color: #ccc;
+            /* Mengubah warna tiga titik menjadi abu-abu medium */
+            color: #77777a;
             font-size: 1.2rem;
         }
 
@@ -143,7 +155,8 @@
             text-transform: uppercase;
             margin: 25px 0 15px;
             letter-spacing: 1px;
-            color: #444;
+            /* Mengubah warna judul bagian menjadi abu-abu terang */
+            color: #a1a1a5;
         }
 
         /* Footer */
@@ -163,8 +176,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #fff;
-            box-shadow: 0 2px 6px rgba(245, 173, 26,0.1);
+            /* Mengubah background logo di footer menjadi gelap */
+            background: #252529;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .logo-circle-footer img {
