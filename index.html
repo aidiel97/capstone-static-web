@@ -213,10 +213,137 @@
             height: 100%;
             object-fit: cover;
         }
+
+        /* POPUP OVERLAY */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .popup-content {
+            max-width: 90%;
+            max-height: 80vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .popup-content img {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            display: none; /* default semua hidden, ditampilkan lewat JS */
+        }
+
+        .popup-content img.active {
+            display: block;
+        }
+
+        .popup-close-btn {
+            margin-top: 20px;
+            background: linear-gradient(135deg, #B88213, #F5AD1A);
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(245, 173, 26, 0.3);
+        }
+
+        .popup-nav {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .popup-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.35);
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.5);
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .popup-dot.active {
+            background: #F5AD1A;
+            border-color: #F5AD1A;
+            transform: scale(1.15);
+        }
+
+        /* PANAH GESER */
+        .popup-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10001;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .popup-arrow:hover {
+            background: rgba(245, 173, 26, 0.8);
+        }
+
+        .popup-arrow.prev {
+            left: 10px;
+        }
+
+        .popup-arrow.next {
+            right: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .popup-arrow {
+                width: 38px;
+                height: 38px;
+                font-size: 1.1rem;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
+<div class="popup-overlay" id="popupOverlay">
+    <button class="popup-arrow prev" id="popupPrev">&#10094;</button>
+    <button class="popup-arrow next" id="popupNext">&#10095;</button>
+
+    <div class="popup-content">
+        <img src="assets/popup1.png" class="active" alt="Pengumuman 1">
+        <img src="assets/popup2.png" alt="Pengumuman 2">
+        <img src="assets/popup3.png" alt="Pengumuman 3">
+
+        <div class="popup-nav" id="popupNav"></div>
+        <button class="popup-close-btn" id="popupCloseBtn">Tutup</button>
+    </div>
+</div>
 
 <div class="container">
     <div class="profile-img">
@@ -361,6 +488,56 @@
 
     // Jalankan fungsi saat web dimuat
     window.onload = updateAgenda;
+
+    // fungsi popup overlay
+    (function() {
+        const overlay = document.getElementById('popupOverlay');
+        const images = overlay.querySelectorAll('.popup-content img');
+        const nav = document.getElementById('popupNav');
+        const closeBtn = document.getElementById('popupCloseBtn');
+        const prevBtn = document.getElementById('popupPrev');
+        const nextBtn = document.getElementById('popupNext');
+        let current = 0;
+
+        images.forEach((img, i) => {
+            const dot = document.createElement('div');
+            dot.className = 'popup-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => showImage(i));
+            nav.appendChild(dot);
+        });
+        const dots = nav.querySelectorAll('.popup-dot');
+
+        function showImage(index) {
+            const total = images.length;
+            current = (index + total) % total; // biar bisa "muter" dari akhir ke awal
+            images.forEach((img, i) => img.classList.toggle('active', i === current));
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        }
+
+        prevBtn.addEventListener('click', () => showImage(current - 1));
+        nextBtn.addEventListener('click', () => showImage(current + 1));
+
+        // sembunyikan panah kalau gambar cuma satu
+        if (images.length <= 1) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        }
+
+        document.body.classList.add('popup-active');
+        overlay.style.display = 'flex';
+
+        closeBtn.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            document.body.classList.remove('popup-active');
+        });
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.style.display = 'none';
+                document.body.classList.remove('popup-active');
+            }
+        });
+    })();
 </script>
 
 </body>
